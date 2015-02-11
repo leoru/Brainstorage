@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>categories</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>24</string>
+			<key>name</key>
+			<string>Разное</string>
+			<key>desc</key>
+			<string>Безопасность, аналитика, поддержка, консультации</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>25</string>
+			<key>name</key>
+			<string>Дизайн</string>
+			<key>desc</key>
+			<string>Дизайн, UI, прототипирование, типографика, аудит</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>26</string>
+			<key>name</key>
+			<string>Фронтенд</string>
+			<key>desc</key>
+			<string>HTML, CSS, JavaScript, jQuery, Mootools</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>27</string>
+			<key>name</key>
+			<string>Бэкенд</string>
+			<key>desc</key>
+			<string>PHP, Python, RoR, SQL/noSQL, Java, C++</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>28</string>
+			<key>name</key>
+			<string>Приложения</string>
+			<key>desc</key>
+			<string>iOS, Android, WP7, Bada, Symbian</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>29</string>
+			<key>name</key>
+			<string>Менеджмент</string>
+			<key>desc</key>
+			<string>Управление, менеджмент, консалтинг</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>30</string>
+			<key>name</key>
+			<string>Контент</string>
+			<key>desc</key>
+			<string>Журналистика, копирайтинг, рерайтинг, блоггинг</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>32</string>
+			<key>name</key>
+			<string>Администрирование</string>
+			<key>desc</key>
+			<string>Сети, серверы, базы данных</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>33</string>
+			<key>name</key>
+			<string>Тестирование</string>
+			<key>desc</key>
+			<string>Functional, performance, security, stress, load, usability</string>
+		</dict>
+	</array>
+</dict>
+</plist>
