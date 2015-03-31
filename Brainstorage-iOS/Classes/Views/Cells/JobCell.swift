@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Haneke
 
 class JobCell: UITableViewCell {
 
@@ -42,7 +41,7 @@ class JobCell: UITableViewCell {
         self.company.text = self.job.companyName
         self.location.text = self.job.locationName
         
-        self.icon.hnk_setImageFromURL(NSURL(string: self.job.imagePath)!)
+        self.icon.sd_setImageWithURL(NSURL(string: self.job.imagePath)!)
         
         self.title.sizeToFit()
         self.company.sizeToFit()

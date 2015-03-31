@@ -32,7 +32,6 @@
 		6AB267C31A890E8800E1171C /* HTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB267C01A890E8800E1171C /* HTMLNode.swift */; };
 		6AB267C41A890E8800E1171C /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB267C11A890E8800E1171C /* HTMLParser.swift */; };
 		6AB267C61A89DD6100E1171C /* HTMLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB267C51A89DD6100E1171C /* HTMLBuilder.swift */; };
-		6AC066EA1A8688A000BCA2C5 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6AC066E21A86886200BCA2C5 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6AC066EC1A8689CD00BCA2C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC066EB1A8689CD00BCA2C5 /* Images.xcassets */; };
 		6ACE53DE1A8630D900E94202 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE53DD1A8630D900E94202 /* libxml2.dylib */; };
 		6AD54FF31A8B4DAF00716B9B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FE81A8B4DAF00716B9B /* AboutViewController.swift */; };
@@ -48,37 +47,6 @@
 		B0D1D5661114CEA0B305EF30 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C2B87167A12013169BD50 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6AC066E11A86886200BCA2C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9561980418C00CD0F4C;
-			remoteInfo = Haneke;
-		};
-		6AC066E31A86886200BCA2C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A095C9611980418C00CD0F4C;
-			remoteInfo = HanekeTests;
-		};
-		6AC066E51A86886200BCA2C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
-			remoteInfo = HanekeDemo;
-		};
-		6AC066E71A86886C00BCA2C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A095C9551980418C00CD0F4C;
-			remoteInfo = Haneke;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		6AC066E91A86889100BCA2C5 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -86,7 +54,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6AC066EA1A8688A000BCA2C5 /* Haneke.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +63,7 @@
 		1E57F1AA0F24E0D070B8090C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5B3C2B87167A12013169BD50 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C84EB44D0321AB7F4219EE3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6A1AF26B1A840F4F00B6B417 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		6A1AF26B1A840F4F00B6B417 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A2C86E91A8B341300F2674B /* GDWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewController.swift; sourceTree = "<group>"; };
 		6A2C86EA1A8B341300F2674B /* GDWebViewNavigationToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDWebViewNavigationToolbar.swift; sourceTree = "<group>"; };
 		6A2C86EC1A8B341300F2674B /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
@@ -124,7 +91,6 @@
 		6AB267C11A890E8800E1171C /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		6AB267C21A890E8800E1171C /* Swift-HTML-Parser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-HTML-Parser-Bridging-Header.h"; sourceTree = "<group>"; };
 		6AB267C51A89DD6100E1171C /* HTMLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLBuilder.swift; sourceTree = "<group>"; };
-		6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = "Brainstorage-iOS/Vendor/HanekeSwift/Haneke.xcodeproj"; sourceTree = "<group>"; };
 		6AC066EB1A8689CD00BCA2C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Brainstorage-iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		6ACE53D61A86308800E94202 /* Brainstorage-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brainstorage-bridging-header.h"; path = "SupportFiles/Brainstorage-bridging-header.h"; sourceTree = "<group>"; };
 		6ACE53DD1A8630D900E94202 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -193,7 +159,6 @@
 		6A8624B81A828C2000FC0556 = {
 			isa = PBXGroup;
 			children = (
-				6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */,
 				6A8624C31A828C2000FC0556 /* Brainstorage-iOS */,
 				6A8624C21A828C2000FC0556 /* Products */,
 				F36521A87AA6D54F4C24C7DF /* Pods */,
@@ -359,16 +324,6 @@
 			path = HTMLParser;
 			sourceTree = "<group>";
 		};
-		6AC066DB1A86886200BCA2C5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6AC066E21A86886200BCA2C5 /* Haneke.framework */,
-				6AC066E41A86886200BCA2C5 /* HanekeTests.xctest */,
-				6AC066E61A86886200BCA2C5 /* HanekeDemo.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6AD54FE71A8B4DAF00716B9B /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +387,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6AC066E81A86886C00BCA2C5 /* PBXTargetDependency */,
 			);
 			name = Brainstorage;
 			productName = "Brainstorage-iOS";
@@ -464,42 +418,12 @@
 			mainGroup = 6A8624B81A828C2000FC0556;
 			productRefGroup = 6A8624C21A828C2000FC0556 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6AC066DB1A86886200BCA2C5 /* Products */;
-					ProjectRef = 6AC066DA1A86886200BCA2C5 /* Haneke.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6A8624C01A828C2000FC0556 /* Brainstorage */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6AC066E21A86886200BCA2C5 /* Haneke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Haneke.framework;
-			remoteRef = 6AC066E11A86886200BCA2C5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6AC066E41A86886200BCA2C5 /* HanekeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = HanekeTests.xctest;
-			remoteRef = 6AC066E31A86886200BCA2C5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6AC066E61A86886200BCA2C5 /* HanekeDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = HanekeDemo.app;
-			remoteRef = 6AC066E51A86886200BCA2C5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6A8624BF1A828C2000FC0556 /* Resources */ = {
@@ -604,14 +528,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6AC066E81A86886C00BCA2C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Haneke;
-			targetProxy = 6AC066E71A86886C00BCA2C5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A8624CC1A828C2000FC0556 /* Main.storyboard */ = {

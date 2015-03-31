@@ -10,5 +10,6 @@
 #define Brainstorage_Brainstorage_bridging_header_h
 
 #import "Swift-HTML-Parser-Bridging-Header.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif
