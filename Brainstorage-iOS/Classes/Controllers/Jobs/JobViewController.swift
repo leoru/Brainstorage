@@ -44,7 +44,7 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
         self.detailsBrowser.scrollView.scrollEnabled = false
         detailsHeight = self.detailsBrowser.frame.size.height
         
-        SwiftLoader.show(self.view, title: "Загрузка...", animates: true)
+        SwiftLoader.show(title: "Загрузка...", animated: true)
         RequestClient.sharedInstance.details(&self.job!, success: {
             self.successLoadingDetails()
             }, failure: {(error : NSError) in
@@ -67,7 +67,7 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
     }
     
     func successLoadingDetails() {
-        SwiftLoader.hide(self.view, animated: true)
+        SwiftLoader.hide()
         self.detailsBrowser.loadHTMLString(HTMLBuilder.htmlForJob(self.job!), baseURL: nil)
         self.updateJob()
     }
