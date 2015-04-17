@@ -37,7 +37,7 @@ class JobsFilterViewController: UITableViewController {
     
     func setup() {
         self.navigationItem.title = "Фильтр"
-        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         self.fieildQuery.addTarget(self, action: Selector("queryFieldChanged"), forControlEvents: UIControlEvents.EditingChanged)
         var closeButtonItem = UIBarButtonItem(title: "Готово", style: UIBarButtonItemStyle.Done, target: self, action: Selector("actionCloseFilter"))
         self.navigationItem.rightBarButtonItem = closeButtonItem
@@ -45,15 +45,15 @@ class JobsFilterViewController: UITableViewController {
     
     func updateFilter() {
         
-        if (self.filter.query != "") {
+     //   if (self.filter.query != "") {
             self.fieildQuery.text = self.filter.query
-        }
+     //   }
         
         var selectedCategories = self.filter.selectedCategories()
         if (selectedCategories.count > 0) {
             self.fieldCategories.text = "Выбрано \(selectedCategories.count) из 9"
         } else {
-            self.fieldCategories.text = ""
+            self.fieldCategories.text = "Выберите раздел"
         }
         
         self.switchFulltime.on = self.filter.fulltime
@@ -83,6 +83,15 @@ class JobsFilterViewController: UITableViewController {
         self.filter.fulltime = self.switchFulltime.on
     }
     
+    @IBAction func clearFilter(sender: AnyObject) {
+        self.filter.freelance = false
+        self.filter.contract = false
+        self.filter.fulltime = false;
+        self.filter.query = "";
+        self.filter.categories.removeAll();
+        
+        self.updateFilter();
+    }
     
     // UITextField Text Changed Event
     
@@ -92,7 +101,7 @@ class JobsFilterViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 2) {
             tableView.deselectRowAtIndexPath(indexPath, animated:false)
             var vc : JobCategoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("JobCategoriesViewController") as JobCategoriesViewController
             

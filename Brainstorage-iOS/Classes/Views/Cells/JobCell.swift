@@ -10,6 +10,9 @@ import UIKit
 
 class JobCell: UITableViewCell {
 
+    var isSelected : Bool = false;
+    var animationcomplete : Bool = true;
+    
     var job : Job = Job() {
         didSet {
             update()
@@ -20,20 +23,55 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var company: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var animationBody: UIView!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        var start : [CGFloat] = [CGFloat]();
+        var end : [CGFloat] = [CGFloat]();
+        start = [225/255.0,229/255.0,230/255.0, 1.0];
+        end = [1,1,1,1];
+        
+        var im : UIImage = UIImage.radialGradientImage(self.animationBody.frame.size, startColor: start, endColor: end, centre: CGPointMake(0.3,0.4), radius: 0.7)
+        
+        var imageview : UIImageView = UIImageView(image: im)
+        self.animationBody.addSubview(imageview);
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        self.isSelected = highlighted;
+        if (highlighted) {
+            animationcomplete = false;
+            UIView.animateWithDuration(0.3,
+                delay: 0,
+                options: UIViewAnimationOptions.CurveEaseOut,
+                animations: { () -> Void in
+                    self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
+            }, completion: { (Bool b) -> Void in
+                if (!(self.isSelected)) {
+                    self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+                }
+                self.animationcomplete = true
+            })
+            
+        } else {
+            if (self.animationcomplete) {
+                self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+            }
+            
+        }
+
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        var selectedBackView = UIView(frame: self.bounds)
-        selectedBackView.backgroundColor = bs_navBarColor
-        self.selectedBackgroundView = selectedBackView
     }
     
     private func update() {
@@ -41,7 +79,7 @@ class JobCell: UITableViewCell {
         self.company.text = self.job.companyName
         self.location.text = self.job.locationName
         
-        self.icon.sd_setImageWithURL(NSURL(string: self.job.imagePath)!)
+        self.icon.sd_setImageWithURL(NSURL(string: self.job.imagePath)!, placeholderImage: UIImage(named: "placeholder")!)
         
         self.title.sizeToFit()
         self.company.sizeToFit()
@@ -50,14 +88,21 @@ class JobCell: UITableViewCell {
     
     class func height(job: Job, width : Float) -> Float {
         var height : Float = 0.0
-        var font: UIFont = UIFont.boldSystemFontOfSize(16.0)
+        var font: UIFont = UIFont(name: "Helvetica Neue", size:15.0)!
         var titleHeight : CGFloat = font.sizeOfString(job.title, constrainedToWidth: Double(width)).height
         
-        font = UIFont.boldSystemFontOfSize(13.0)
+        font = UIFont(name: "Helvetica Neue", size:13.0)!
         var companyHeight : CGFloat = font.sizeOfString(job.companyName, constrainedToWidth: Double(width)).height
         var locationHeight : CGFloat = font.sizeOfString(job.locationName, constrainedToWidth: Double(width)).height
         
-        height = 15.0 + Float(titleHeight) + 3.0 + Float(companyHeight) + 3.0 + Float(locationHeight) + 15.0
+        if (job.locationName=="") {
+            locationHeight=0;
+        }
+        
+        height = 11.0 + Float(titleHeight) + 3.0 + Float(companyHeight) + 3.0 + Float(locationHeight) + 11.0
+        
+        if (height<76) {height=76;}
+        
         return height
     }
     

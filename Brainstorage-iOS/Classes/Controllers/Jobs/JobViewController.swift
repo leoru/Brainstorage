@@ -36,7 +36,10 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
         
         var filterButton : UIButton = UIButton(frame: CGRectMake(0, 0, 24, 24))
         filterButton.setImage(UIImage(named: "share"), forState: UIControlState.Normal)
-        filterButton.addTarget(self, action: Selector("actionOpenShare"), forControlEvents: UIControlEvents.TouchUpInside)
+        filterButton.addTarget(self, action: Selector("actionOpenShare:"), forControlEvents: UIControlEvents.TouchUpInside)
+        filterButton.addTarget(self, action: Selector("clickAnimationNormal:"), forControlEvents: UIControlEvents.TouchUpOutside)
+         filterButton.addTarget(self, action: Selector("clickAnimationPush:"), forControlEvents: UIControlEvents.TouchDown)
+        
         var barButtonItem : UIBarButtonItem = UIBarButtonItem(customView: filterButton)
         self.navigationItem.rightBarButtonItem = barButtonItem
         
@@ -58,8 +61,9 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
         if (self.job != nil) {
             self.titleLabel.text = self.job?.title
             self.locationLabel.text = self.job?.locationName
-            self.navigationItem.title = self.job?.title
+            self.navigationItem.title = "Вакансии"
             self.workTimeLabel.text = self.job?.occupationName()
+            self.workTimeLabel.textColor = self.job?.occupationColor()
             self.worktimeIcon.image = UIImage(named: self.job!.occupationIcon())
             self.dateLabel.text = self.job!.date
             self.viewsLabel.text = self.job!.views
@@ -72,10 +76,42 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
         self.updateJob()
     }
     
-    func actionOpenShare() {
+    func actionOpenShare(sender:UIButton) {
+        clickAnimationNormal(sender)
         var actionSheet : UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Отмена", destructiveButtonTitle: nil, otherButtonTitles: "Открыть в браузере", "Скопировать ссылку")
         actionSheet.showInView(self.view)
     }
+    
+    func clickAnimationNormal(sender:UIButton) {
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            },
+            completion: nil)
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0.05,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(1, 1)
+            },
+            completion: nil)
+       }
+    
+    func clickAnimationPush(sender:UIButton) {
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            },
+            completion: nil)
+    }
+
     
     func openBrowser(url : NSURL) {
         var browser = GDWebViewController()

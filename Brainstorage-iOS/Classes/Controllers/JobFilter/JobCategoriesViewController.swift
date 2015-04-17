@@ -9,7 +9,7 @@
 import UIKit
 
 class JobCategoriesViewController: BaseTableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,9 +29,9 @@ class JobCategoriesViewController: BaseTableViewController {
         var jobCategory = JobFilter.sharedInstance.categories[indexPath.row]
         cell.jobCategory = jobCategory
         if (jobCategory.selected) {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.Check(true);
         } else {
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.Check(false);
         }
         return cell
     }
@@ -46,7 +46,11 @@ class JobCategoriesViewController: BaseTableViewController {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        var jobCategory = JobFilter.sharedInstance.categories[indexPath.row]
+        
+        var width: Float = Float(self.view.frame.size.width) - 30.0 - 50.0
+        var height : Float = JobCategoryCell.height(jobCategory, width: width)
+        return CGFloat(height)
     }
     
     
@@ -58,9 +62,9 @@ class JobCategoriesViewController: BaseTableViewController {
         jobCategory.selected = !jobCategory.selected
         
         if (jobCategory.selected) {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+             cell.Check(true);
         } else {
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.Check(false);
         }
     }
 

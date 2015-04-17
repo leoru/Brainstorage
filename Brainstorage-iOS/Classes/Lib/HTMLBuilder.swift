@@ -13,7 +13,7 @@ class HTMLBuilder : NSObject {
     
     class func CSS() -> String {
         var css = ""
-            css += "body {font-family: Helvetica; background-color:transparent; margin: 0; margin-left: 10px; margin-right: 10px; color: #33485E; font-size: 11pt; }"
+            css += "body {font-family: Helvetica Neue; background-color:transparent; margin: 0; margin-left: 10px; margin-right: 10px; color: #33485E; font-size: 11pt; }"
             css += " a { color: #EC6259; text-decoration : none; }"
             css += ".instructions { background: #fff8e6; color: #8e856d; margin: 20px -20px 0; padding: 20px 20px; }"
             css += ".instructions .title { font-weight: bold; margin-bottom: 10px; }"

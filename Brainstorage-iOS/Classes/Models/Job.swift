@@ -61,5 +61,16 @@ class Job: NSObject {
             return "Контракт"
         }
     }
+    
+    func occupationColor() -> UIColor! {
+        switch self.occupations[0] {
+        case "fulltime" :
+            return bs_orangeColor
+        case "freelance" :
+            return bs_blueColor
+        default:
+            return bs_greenColor
+        }
+    }
    
 }

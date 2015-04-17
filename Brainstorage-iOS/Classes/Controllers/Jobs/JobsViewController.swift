@@ -13,10 +13,15 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
     var items : [Job] = [Job]()
     var isRefreshing : Bool = false
     
+    @IBOutlet weak var emptyView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavBar()
         self.setTitleForPage(titleString: "Вакансии")
+        
+        var backItem = UIBarButtonItem(title: "", style: .Bordered, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
         
         var className : String = "JobCell"
         self.table?.registerNib(UINib(nibName: className, bundle: nil), forCellReuseIdentifier: className)
@@ -35,16 +40,51 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
         self.loadMore()
     }
     
-    func actionOpenFilter() {
+    
+    func actionOpenFilter(sender:UIButton) {
+        clickAnimationNormal(sender)
         var vc : UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("JobsFilterViewControllerContainer") as UINavigationController
         (vc.topViewController as JobsFilterViewController).delegate = self
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    func clickAnimationNormal(sender:UIButton) {
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            },
+            completion: nil)
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0.05,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(1, 1)
+            },
+            completion: nil)
+    }
+    
+    func clickAnimationPush(sender:UIButton) {
+        UIView.animateWithDuration(
+            0.05,
+            delay: 0,
+            options: UIViewAnimationOptions.CurveLinear,
+            animations: { () -> Void in
+                sender.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            },
+            completion: nil)
+    }
+    
     func setupNavBar() {
         var filterButton : UIButton = UIButton(frame: CGRectMake(0, 0, 24, 24))
         filterButton.setImage(UIImage(named: "filter"), forState: UIControlState.Normal)
-        filterButton.addTarget(self, action: Selector("actionOpenFilter"), forControlEvents: UIControlEvents.TouchUpInside)
+        filterButton.addTarget(self, action: Selector("actionOpenFilter:"), forControlEvents: UIControlEvents.TouchUpInside)
+        filterButton.addTarget(self, action: Selector("clickAnimationNormal:"), forControlEvents: UIControlEvents.TouchUpOutside)
+        filterButton.addTarget(self, action: Selector("clickAnimationPush:"), forControlEvents: UIControlEvents.TouchDown)
+        
         var barButtonItem : UIBarButtonItem = UIBarButtonItem(customView: filterButton)
         self.navigationItem.rightBarButtonItem = barButtonItem
     }
@@ -56,6 +96,12 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
         
         self.hideLoading()
         self.isPageLoading = false
+        
+        UIView.animateWithDuration(0.3,
+            delay:0,
+            options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.emptyView.alpha = (self.items.count>0) ? 0 : 1
+            }, completion: nil)
     }
     
     override func loadMore() {
@@ -75,6 +121,7 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
         JobFilter.sharedInstance.page = 1
         self.items = [Job]()
         self.loadMore()
+        
     }
     
     override func showLoading() {

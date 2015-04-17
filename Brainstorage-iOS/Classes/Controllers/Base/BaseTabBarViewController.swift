@@ -12,14 +12,18 @@ class BaseTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.barTintColor = bs_navBarColor
-        self.tabBar.tintColor = bs_redColor
+        self.tabBar.barTintColor = UIColor.whiteColor();
+        self.tabBar.tintColor = bs_redColor;
+        self.tabBar.backgroundColor = UIColor.whiteColor();
+        self.tabBar.shadowImage = UIImage(named: "tabBar_Border");
+        self.tabBar.translucent=false;
         
-        var tabbarItemJobs : UITabBarItem = self.tabBar.items![0] as UITabBarItem
-        tabBarItem.selectedImage = UIImage(named: "vacancy_active")
+        var offset = UIOffset(horizontal: 0, vertical: -4);
+        (self.tabBar.items![0] as UITabBarItem).selectedImage = UIImage(named: "vacancy_active");
+        (self.tabBar.items![0] as UITabBarItem).setTitlePositionAdjustment(offset);
         
-        var tabbarItemAbout : UITabBarItem = self.tabBar.items![1] as UITabBarItem
-        tabBarItem.selectedImage = UIImage(named: "about_active")
+        (self.tabBar.items![1] as UITabBarItem).selectedImage = UIImage(named: "about_active");
+        (self.tabBar.items![1] as UITabBarItem).setTitlePositionAdjustment(offset);
     }
    
 }
