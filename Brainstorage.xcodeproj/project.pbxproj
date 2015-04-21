@@ -499,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 8404308fa4c83289df10c9dd7e694808ab6f62b5 ace6747f9d0637c291441c9a24fa27ab5d165aea674d20d05b0c80c83be323ec";
+			shellScript = "#./Fabric.framework/run 8404308fa4c83289df10c9dd7e694808ab6f62b5 ace6747f9d0637c291441c9a24fa27ab5d165aea674d20d05b0c80c83be323ec";
 		};
 		8E75B5EF93BDECBCE1968F13 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -710,7 +710,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = Brainstorage;
-				PROVISIONING_PROFILE = "ade9302f-163e-442d-bf16-050c361a03dd";
+				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainstorage-iOS/SupportFiles/Brainstorage-bridging-header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
