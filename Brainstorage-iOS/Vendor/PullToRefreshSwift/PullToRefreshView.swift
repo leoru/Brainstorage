@@ -19,7 +19,7 @@ public class PullToRefreshView: UIView {
     
     private var backgroundView: UIView!
     private var arrow: UIImageView!
-    private var indicator: UIActivityIndicatorView!
+    private var indicator: UIImageView!
     private var scrollViewBounces: Bool = false
     private var scrollViewInsets: UIEdgeInsets = UIEdgeInsetsZero
     private var previousOffset: CGFloat = 0
@@ -61,10 +61,10 @@ public class PullToRefreshView: UIView {
         self.arrow.image = UIImage(named: PullToRefreshConst.imageName)
         self.addSubview(arrow)
         
-        self.indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        self.indicator = UIImageView(image: UIImage(named:"indicator"))
         self.indicator.bounds = self.arrow.bounds
         self.indicator.autoresizingMask = self.arrow.autoresizingMask
-        self.indicator.hidesWhenStopped = true
+        self.indicator.stopAnimating()
         self.addSubview(indicator)
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth

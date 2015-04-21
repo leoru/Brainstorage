@@ -12,7 +12,7 @@ class BaseTableViewController: BaseViewController, UITableViewDelegate, UITableV
     
     @IBOutlet var table : UITableView?
     var footerView : UIView?
-    var footerActInd : UIActivityIndicatorView?
+    var footerActInd : UIImageView?//UIActivityIndicatorView?
     var isPageLoading : Bool?
     
 
@@ -72,8 +72,7 @@ class BaseTableViewController: BaseViewController, UITableViewDelegate, UITableV
         self.footerView = UIView(frame: footerFrame)
         self.footerView?.backgroundColor = UIColor.clearColor()
         self.footerView?.hidden = false
-        self.footerActInd = UIActivityIndicatorView()
-        self.footerActInd?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        self.footerActInd = UIImageView(image: UIImage(named:"indicator"))
         self.footerActInd?.center = CGPointMake(footerFrame.width / 2, footerFrame.height / 2)
         self.footerView?.addSubview(self.footerActInd!)
     }
