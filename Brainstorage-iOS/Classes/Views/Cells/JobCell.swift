@@ -56,13 +56,10 @@ class JobCell: UITableViewCell {
                 animations: { () -> Void in
                     self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
             }, completion: { (Bool b) -> Void in
-                if (b) {
-                    if (!(self.selected)) {
-                        self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
-                    }
-                    self.animationcomplete = true
+                if (!(self.selected)) {
+                    self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
                 }
-                
+                self.animationcomplete = true
             })
             
         } else {

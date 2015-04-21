@@ -408,7 +408,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-xA-h36">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
-                                                    <color key="backgroundColor" red="0.87450987100601196" green="0.89803928136825562" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="backgroundColor" red="0.87450987099999999" green="0.8980392814" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="Fzl-L9-luf"/>
                                                     </constraints>
@@ -481,6 +481,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4k-dL-xtm" id="2C2-zy-Vu3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ar-gt-T6k">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                                    <color key="backgroundColor" red="0.87450987099999999" green="0.8980392814" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Раздел" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hby-zo-lYb">
                                                     <rect key="frame" x="15" y="15" width="300" height="22"/>
                                                     <constraints>
@@ -499,7 +503,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7Ar-gt-T6k" secondAttribute="bottom" id="DGP-bg-aNZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Ar-gt-T6k" secondAttribute="trailing" id="Dly-La-5Uu"/>
+                                                <constraint firstItem="7Ar-gt-T6k" firstAttribute="leading" secondItem="2C2-zy-Vu3" secondAttribute="leading" id="Gd3-53-baT"/>
                                                 <constraint firstItem="Hby-zo-lYb" firstAttribute="top" secondItem="2C2-zy-Vu3" secondAttribute="top" constant="15" id="SrM-RZ-zlJ"/>
+                                                <constraint firstItem="7Ar-gt-T6k" firstAttribute="top" secondItem="2C2-zy-Vu3" secondAttribute="top" id="euV-Bo-Nff"/>
                                                 <constraint firstItem="Hby-zo-lYb" firstAttribute="leading" secondItem="2C2-zy-Vu3" secondAttribute="leading" constant="15" id="nOL-gw-4xm"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -559,6 +567,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7DP-6V-djC" id="lsT-d8-ZnT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-EC-R0J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                                    <color key="backgroundColor" red="0.87450987099999999" green="0.8980392814" blue="0.90196084980000002" alpha="1" colorSpace="deviceRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Тип занятости" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWx-HT-aP8">
                                                     <rect key="frame" x="15" y="15" width="300" height="22"/>
                                                     <constraints>
@@ -571,7 +583,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ET4-EC-R0J" firstAttribute="leading" secondItem="lsT-d8-ZnT" secondAttribute="leading" id="BhY-ok-vft"/>
                                                 <constraint firstItem="RWx-HT-aP8" firstAttribute="leading" secondItem="lsT-d8-ZnT" secondAttribute="leading" constant="15" id="L73-gY-vsz"/>
+                                                <constraint firstAttribute="bottom" secondItem="ET4-EC-R0J" secondAttribute="bottom" id="fKW-03-8SM"/>
+                                                <constraint firstItem="ET4-EC-R0J" firstAttribute="top" secondItem="lsT-d8-ZnT" secondAttribute="top" id="sK4-43-ddp"/>
+                                                <constraint firstAttribute="trailing" secondItem="ET4-EC-R0J" secondAttribute="trailing" id="u1C-Tx-P7O"/>
                                                 <constraint firstItem="RWx-HT-aP8" firstAttribute="top" secondItem="lsT-d8-ZnT" secondAttribute="top" constant="15" id="y4H-96-oHQ"/>
                                             </constraints>
                                         </tableViewCellContentView>

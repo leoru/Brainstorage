@@ -88,7 +88,9 @@ class JobsFilterViewController: UITableViewController {
         self.filter.contract = false
         self.filter.fulltime = false;
         self.filter.query = "";
-        self.filter.categories.removeAll();
+        for item in self.filter.selectedCategories(){
+            item.selected=false;
+        }
         
         self.updateFilter();
     }

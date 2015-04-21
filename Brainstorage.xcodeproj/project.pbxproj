@@ -34,6 +34,8 @@
 		6AB267C41A890E8800E1171C /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB267C11A890E8800E1171C /* HTMLParser.swift */; };
 		6AB267C61A89DD6100E1171C /* HTMLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB267C51A89DD6100E1171C /* HTMLBuilder.swift */; };
 		6AC066EC1A8689CD00BCA2C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC066EB1A8689CD00BCA2C5 /* Images.xcassets */; };
+		6ACC8B7B1AE6666F001F6717 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACC8B791AE6666F001F6717 /* Crashlytics.framework */; };
+		6ACC8B7C1AE6666F001F6717 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACC8B7A1AE6666F001F6717 /* Fabric.framework */; };
 		6ACE53DE1A8630D900E94202 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACE53DD1A8630D900E94202 /* libxml2.dylib */; };
 		6AD54FF31A8B4DAF00716B9B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FE81A8B4DAF00716B9B /* AboutViewController.swift */; };
 		6AD54FF41A8B4DAF00716B9B /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD54FEA1A8B4DAF00716B9B /* JobsViewController.swift */; };
@@ -94,6 +96,8 @@
 		6AB267C21A890E8800E1171C /* Swift-HTML-Parser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swift-HTML-Parser-Bridging-Header.h"; sourceTree = "<group>"; };
 		6AB267C51A89DD6100E1171C /* HTMLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLBuilder.swift; sourceTree = "<group>"; };
 		6AC066EB1A8689CD00BCA2C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Brainstorage-iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		6ACC8B791AE6666F001F6717 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6ACC8B7A1AE6666F001F6717 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		6ACE53D61A86308800E94202 /* Brainstorage-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brainstorage-bridging-header.h"; path = "SupportFiles/Brainstorage-bridging-header.h"; sourceTree = "<group>"; };
 		6ACE53DD1A8630D900E94202 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6AD54FE81A8B4DAF00716B9B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ACE53DE1A8630D900E94202 /* libxml2.dylib in Frameworks */,
+				6ACC8B7B1AE6666F001F6717 /* Crashlytics.framework in Frameworks */,
 				B0D1D5661114CEA0B305EF30 /* Pods.framework in Frameworks */,
+				6ACC8B7C1AE6666F001F6717 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,8 @@
 		05B4FB34DE28BA35D5A346CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ACC8B791AE6666F001F6717 /* Crashlytics.framework */,
+				6ACC8B7A1AE6666F001F6717 /* Fabric.framework */,
 				6ACE53DD1A8630D900E94202 /* libxml2.dylib */,
 				5B3C2B87167A12013169BD50 /* Pods.framework */,
 			);
@@ -386,6 +394,7 @@
 				1FB295704645BEF3AA80E37C /* Copy Pods Resources */,
 				24532FBB3B1751182175CAD6 /* Embed Pods Frameworks */,
 				6AC066E91A86889100BCA2C5 /* CopyFiles */,
+				6ACC8B781AE66642001F6717 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -475,6 +484,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6ACC8B781AE66642001F6717 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 8404308fa4c83289df10c9dd7e694808ab6f62b5 ace6747f9d0637c291441c9a24fa27ab5d165aea674d20d05b0c80c83be323ec";
 		};
 		8E75B5EF93BDECBCE1968F13 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -631,6 +653,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -660,6 +686,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kirill Kunst (Z9BGBYPL8S)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -676,7 +706,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = Brainstorage;
-				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
+				PROVISIONING_PROFILE = "ade9302f-163e-442d-bf16-050c361a03dd";
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainstorage-iOS/SupportFiles/Brainstorage-bridging-header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
