@@ -54,11 +54,11 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
             delay: 0,
             options: UIViewAnimationOptions.CurveLinear,
             animations: { () -> Void in
-                sender.transform = CGAffineTransformMakeScale(1.5, 1.5)
+                sender.transform = CGAffineTransformMakeScale(0.7, 0.7)
             },
             completion: nil)
         UIView.animateWithDuration(
-            0.05,
+            0.2,
             delay: 0.05,
             options: UIViewAnimationOptions.CurveLinear,
             animations: { () -> Void in
@@ -67,24 +67,11 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
             completion: nil)
     }
     
-    func clickAnimationPush(sender:UIButton) {
-        UIView.animateWithDuration(
-            0.05,
-            delay: 0,
-            options: UIViewAnimationOptions.CurveLinear,
-            animations: { () -> Void in
-                sender.transform = CGAffineTransformMakeScale(0.8, 0.8)
-            },
-            completion: nil)
-    }
-    
     func setupNavBar() {
         var filterButton : UIButton = UIButton(frame: CGRectMake(0, 0, 24, 24))
         filterButton.setImage(UIImage(named: "filter"), forState: UIControlState.Normal)
         filterButton.addTarget(self, action: Selector("actionOpenFilter:"), forControlEvents: UIControlEvents.TouchUpInside)
-        filterButton.addTarget(self, action: Selector("clickAnimationNormal:"), forControlEvents: UIControlEvents.TouchUpOutside)
-        filterButton.addTarget(self, action: Selector("clickAnimationPush:"), forControlEvents: UIControlEvents.TouchDown)
-        
+        filterButton.addTarget(self, action: Selector("clickAnimationNormal:"), forControlEvents: UIControlEvents.TouchUpOutside)        
         var barButtonItem : UIBarButtonItem = UIBarButtonItem(customView: filterButton)
         self.navigationItem.rightBarButtonItem = barButtonItem
     }

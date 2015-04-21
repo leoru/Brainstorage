@@ -64,7 +64,7 @@ public class PullToRefreshView: UIView {
         self.indicator = UIImageView(image: UIImage(named:"indicator"))
         self.indicator.bounds = self.arrow.bounds
         self.indicator.autoresizingMask = self.arrow.autoresizingMask
-        self.indicator.stopAnimating()
+        self.indicator.hidden=true;
         self.addSubview(indicator)
         
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth
