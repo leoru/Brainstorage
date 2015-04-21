@@ -48,7 +48,7 @@ class JobCategoriesViewController: BaseTableViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var jobCategory = JobFilter.sharedInstance.categories[indexPath.row]
         
-        var width: Float = Float(self.view.frame.size.width) - 30.0 - 50.0
+        var width: Float = Float(self.view.frame.size.width) - 59.0
         var height : Float = JobCategoryCell.height(jobCategory, width: width)
         return CGFloat(height)
     }
