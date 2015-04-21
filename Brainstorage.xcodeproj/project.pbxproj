@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		461A57EB1AE10CA30040E239 /* UIImage+RadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A57EA1AE10CA30040E239 /* UIImage+RadialGradient.swift */; };
+		4630531C1AE6751C008433FC /* UIImageView+Animating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630531B1AE6751C008433FC /* UIImageView+Animating.swift */; };
 		6A1AF26C1A840F4F00B6B417 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6A1AF26B1A840F4F00B6B417 /* Podfile */; };
 		6A2C86ED1A8B341300F2674B /* GDWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2C86E91A8B341300F2674B /* GDWebViewController.swift */; };
 		6A2C86EE1A8B341300F2674B /* GDWebViewNavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2C86EA1A8B341300F2674B /* GDWebViewNavigationToolbar.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1E57F1AA0F24E0D070B8090C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		461A57EA1AE10CA30040E239 /* UIImage+RadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RadialGradient.swift"; sourceTree = "<group>"; };
+		4630531B1AE6751C008433FC /* UIImageView+Animating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animating.swift"; sourceTree = "<group>"; };
 		5B3C2B87167A12013169BD50 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C84EB44D0321AB7F4219EE3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6A1AF26B1A840F4F00B6B417 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -264,6 +266,7 @@
 				6AAAC6FB1A82A800009722A1 /* RequestClient.swift */,
 				6AB267C51A89DD6100E1171C /* HTMLBuilder.swift */,
 				461A57EA1AE10CA30040E239 /* UIImage+RadialGradient.swift */,
+				4630531B1AE6751C008433FC /* UIImageView+Animating.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				6A5EC5D61A8A261C007E2BA4 /* JobCategory.swift in Sources */,
 				6AD54FFE1A8B4DBB00716B9B /* UIFontBSExtension.swift in Sources */,
 				6A8625061A82904100FC0556 /* InterfaceManager.swift in Sources */,
+				4630531C1AE6751C008433FC /* UIImageView+Animating.swift in Sources */,
 				6A5EC5D01A8A1B44007E2BA4 /* UIScrollViewExtension.swift in Sources */,
 				6AD54FF91A8B4DAF00716B9B /* BaseTableViewController.swift in Sources */,
 				6AD54FF71A8B4DAF00716B9B /* JobsFilterViewController.swift in Sources */,

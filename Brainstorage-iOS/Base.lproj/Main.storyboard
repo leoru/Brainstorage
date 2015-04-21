@@ -160,21 +160,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4D6-hZ-dTf" id="7IG-BJ-Ggg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jq3-1u-4PA">
-                                                    <rect key="frame" x="121" y="32" width="18" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="18" id="5hf-d3-1NW"/>
-                                                        <constraint firstAttribute="height" constant="16" id="Zlv-xD-FCm"/>
-                                                        <constraint firstAttribute="height" constant="18" id="l3e-za-n3L"/>
-                                                        <constraint firstAttribute="width" constant="18" id="zYk-GZ-XrI"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="l3e-za-n3L"/>
-                                                            <exclude reference="zYk-GZ-XrI"/>
-                                                        </mask>
-                                                    </variation>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_blue" translatesAutoresizingMaskIntoConstraints="NO" id="udV-fv-wj1">
                                                     <rect key="frame" x="15" y="34" width="16" height="16"/>
                                                     <constraints>
@@ -241,7 +226,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Петропавловск-Камчатский" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U0-wM-HQy">
-                                                    <rect key="frame" x="144" y="33" width="275" height="17"/>
+                                                    <rect key="frame" x="142" y="33" width="275" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="BeN-XU-AJe"/>
                                                         <constraint firstAttribute="height" constant="17" id="F3m-OZ-27K"/>
@@ -266,6 +251,21 @@
                                                     <color key="textColor" red="0.56078431370000004" green="0.60784313729999995" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jq3-1u-4PA">
+                                                    <rect key="frame" x="121" y="32" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="16" id="5hf-d3-1NW"/>
+                                                        <constraint firstAttribute="height" constant="16" id="Zlv-xD-FCm"/>
+                                                        <constraint firstAttribute="height" constant="18" id="l3e-za-n3L"/>
+                                                        <constraint firstAttribute="width" constant="18" id="zYk-GZ-XrI"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="l3e-za-n3L"/>
+                                                            <exclude reference="zYk-GZ-XrI"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BhZ-K7-k1A" firstAttribute="leading" secondItem="7IG-BJ-Ggg" secondAttribute="leading" constant="15" id="0Az-Ci-TZb"/>
