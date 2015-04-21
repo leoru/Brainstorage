@@ -19,11 +19,11 @@ class BaseTabBarViewController: UITabBarController {
         self.tabBar.translucent=false;
         
         var offset = UIOffset(horizontal: 0, vertical: -4);
-        (self.tabBar.items![0] as UITabBarItem).selectedImage = UIImage(named: "vacancy_active");
-        (self.tabBar.items![0] as UITabBarItem).setTitlePositionAdjustment(offset);
+        (self.tabBar.items![0] as! UITabBarItem).selectedImage = UIImage(named: "vacancy_active");
+        (self.tabBar.items![0] as! UITabBarItem).setTitlePositionAdjustment(offset);
         
-        (self.tabBar.items![1] as UITabBarItem).selectedImage = UIImage(named: "about_active");
-        (self.tabBar.items![1] as UITabBarItem).setTitlePositionAdjustment(offset);
+        (self.tabBar.items![1] as! UITabBarItem).selectedImage = UIImage(named: "about_active");
+        (self.tabBar.items![1] as! UITabBarItem).setTitlePositionAdjustment(offset);
     }
    
 }

@@ -135,8 +135,8 @@ class GDWebViewNavigationToolbar: UIView {
     
     // MARK: Life Cycle
     
-    init(delegate: GDWebViewNavigationToolbarDelegate) {
-        super.init()
+    convenience init(delegate: GDWebViewNavigationToolbarDelegate) {
+        self.init()
         self.delegate = delegate
     }
 

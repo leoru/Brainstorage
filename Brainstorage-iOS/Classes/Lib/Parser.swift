@@ -21,7 +21,7 @@ class Parser: NSObject {
         var error : NSError? = nil
         var stringData : NSString? = NSString(data: data, encoding: NSUTF8StringEncoding)
         if (stringData != nil) {
-            self.internalParser = HTMLParser(html: stringData!, error: &error)
+            self.internalParser = HTMLParser(html: stringData! as String, error: &error)
         }
     }
     

@@ -64,7 +64,7 @@ class JobsFilterViewController: UITableViewController {
     
     func actionCloseFilter() {
         self.dismissViewControllerAnimated(true, completion: nil)
-        if ((self.delegate?) != nil) {
+        if ((self.delegate) != nil) {
             self.delegate?.filterDidUpdated()
         }
     }
@@ -103,7 +103,7 @@ class JobsFilterViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 2) {
             tableView.deselectRowAtIndexPath(indexPath, animated:false)
-            var vc : JobCategoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("JobCategoriesViewController") as JobCategoriesViewController
+            var vc : JobCategoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("JobCategoriesViewController") as! JobCategoriesViewController
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

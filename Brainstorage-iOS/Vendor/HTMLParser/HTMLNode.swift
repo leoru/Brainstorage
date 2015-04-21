@@ -27,7 +27,7 @@ public class HTMLNode {
     private var doc       : htmlDocPtr
     private var pointer : xmlNodePtr
     private var node      : xmlNode?
-    private let nodeType  : HTMLNodeType = HTMLNodeType.HTMLUnkownNode
+    private var nodeType  : HTMLNodeType = HTMLNodeType.HTMLUnkownNode
     
     /**
     * 親ノード
@@ -118,8 +118,9 @@ public class HTMLNode {
         self.doc  = doc
         self.node = node.memory
         self.pointer = xmlNodePtr(node)
+        let type = HTMLNodeType(rawValue: tagName)
         if let type = HTMLNodeType(rawValue: tagName) {
-            nodeType = type
+            self.nodeType = type
         }
     }
     

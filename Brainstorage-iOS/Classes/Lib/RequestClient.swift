@@ -39,7 +39,7 @@ class RequestClient: NSObject {
                 if (error != nil) {
                     failure(error!)
                 } else {
-                    var parser = Parser(data: responseData as NSData)
+                    var parser = Parser(data: responseData as! NSData)
                     var jobs = parser.jobs()
                     success(jobs)
                 }
@@ -52,7 +52,7 @@ class RequestClient: NSObject {
                 if (error != nil) {
                     failure(error!)
                 } else {
-                    var parser = Parser(data: responseData as NSData)
+                    var parser = Parser(data: responseData as! NSData)
                     parser.detailsForJob(&job)
                     success()
                     

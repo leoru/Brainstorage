@@ -43,8 +43,8 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
     
     func actionOpenFilter(sender:UIButton) {
         clickAnimationNormal(sender)
-        var vc : UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("JobsFilterViewControllerContainer") as UINavigationController
-        (vc.topViewController as JobsFilterViewController).delegate = self
+        var vc : UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("JobsFilterViewControllerContainer") as! UINavigationController
+        (vc.topViewController as! JobsFilterViewController).delegate = self
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -91,7 +91,7 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
     
     func successLoading(objects : [AnyObject]) {
         
-        self.items += objects as [Job]
+        self.items += objects as! [Job]
         self.table?.reloadData()
         
         self.hideLoading()
@@ -151,7 +151,7 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
     // TableView Delegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier : String = "JobCell"
-        var cell : JobCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as JobCell
+        var cell : JobCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! JobCell
         cell.job = self.items[indexPath.row] as Job
         return cell
     }
@@ -175,7 +175,7 @@ class JobsViewController: BaseTableViewController, JobsFilterProtocol {
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var vc : JobViewController = self.storyboard?.instantiateViewControllerWithIdentifier("JobViewController") as JobViewController
+        var vc : JobViewController = self.storyboard?.instantiateViewControllerWithIdentifier("JobViewController") as! JobViewController
         vc.job = self.items[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: false)

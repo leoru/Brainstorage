@@ -142,8 +142,8 @@ class JobViewController: UITableViewController, UIWebViewDelegate, UIActionSheet
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if (navigationType == UIWebViewNavigationType.LinkClicked) {
             var url = request.URL
-            if (url.scheme == "http" || url.scheme == "https") {
-                self.openBrowser(url)
+            if (url!.scheme == "http" || url!.scheme == "https") {
+                self.openBrowser(url!)
                 return false
             }
         }

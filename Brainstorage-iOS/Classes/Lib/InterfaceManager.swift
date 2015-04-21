@@ -22,7 +22,7 @@ class InterfaceManager: NSObject {
         navbar.setBackgroundImage(UIImage(named: "navbar"), forBarMetrics: UIBarMetrics.Default)
         navbar.shadowImage = UIImage(named: "navBar_border");
         let titleDict: NSDictionary = [ NSForegroundColorAttributeName : bs_textColor ];
-        navbar.titleTextAttributes = titleDict
+        navbar.titleTextAttributes = titleDict as [NSObject : AnyObject]
         navbar.tintColor = bs_redColor
         navbar.barTintColor = bs_navBarColor
         navbar.translucent = false

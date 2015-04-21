@@ -15,7 +15,9 @@ func ConvXmlCharToString(str: UnsafePointer<xmlChar>) -> String! {
 
 func rawContentsOfNode(node : xmlNode, pointer: xmlNodePtr) -> String! {
     var result : String?
-    var xmlBuffer = xmlBufferCreateSize(BUFFER_SIZE)
+    let buffer = size_t(BUFFER_SIZE)
+    var xmlBuffer = xmlBufferCreateSize(buffer)
+//    var xmlBuffer = nil
     var outputBuffer : xmlOutputBufferPtr = xmlOutputBufferCreateBuffer(xmlBuffer, nil)
     
     let document = node.doc

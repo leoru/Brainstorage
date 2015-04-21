@@ -24,9 +24,9 @@ class JobCategory: NSObject {
     
     init(jobCategoryDict : NSDictionary) {
         super.init()
-        self.id = jobCategoryDict.objectForKey("id") as String
-        self.name = jobCategoryDict.objectForKey("name") as String
-        self.desc = jobCategoryDict.objectForKey("desc") as String
+        self.id = jobCategoryDict.objectForKey("id") as! String
+        self.name = jobCategoryDict.objectForKey("name") as! String
+        self.desc = jobCategoryDict.objectForKey("desc") as! String
     }
     
     class func allCategories() -> [JobCategory] {
@@ -43,10 +43,10 @@ class JobCategory: NSObject {
             var dataDict = NSDictionary(contentsOfFile: path!)
             
             if let data = dataDict {
-                var catsArray : [AnyObject] = data["categories"] as [AnyObject]
+                var catsArray : [AnyObject] = data["categories"] as! [AnyObject]
                 
                 for item in catsArray  {
-                    let itemDict = item as NSDictionary
+                    let itemDict = item as! NSDictionary
                     var jobCategory = JobCategory(jobCategoryDict: itemDict)
                     cats.append(jobCategory)
                 }

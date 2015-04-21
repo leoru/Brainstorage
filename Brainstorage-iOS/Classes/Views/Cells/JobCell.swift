@@ -10,7 +10,7 @@ import UIKit
 
 class JobCell: UITableViewCell {
 
-    var isSelected : Bool = false;
+    var wasSelected : Bool = false;
     var animationcomplete : Bool = true;
     
     var job : Job = Job() {
@@ -39,6 +39,7 @@ class JobCell: UITableViewCell {
         
         var imageview : UIImageView = UIImageView(image: im)
         self.animationBody.addSubview(imageview);
+        self.selectionStyle = UITableViewCellSelectionStyle.None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -46,19 +47,22 @@ class JobCell: UITableViewCell {
     }
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
-        self.isSelected = highlighted;
+        self.selected = highlighted;
         if (highlighted) {
             animationcomplete = false;
             UIView.animateWithDuration(0.3,
                 delay: 0,
-                options: UIViewAnimationOptions.CurveEaseOut,
+                options: UIViewAnimationOptions.CurveLinear,
                 animations: { () -> Void in
                     self.animationBody.transform = CGAffineTransformMakeScale(65, 65);
             }, completion: { (Bool b) -> Void in
-                if (!(self.isSelected)) {
-                    self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+                if (b) {
+                    if (!(self.selected)) {
+                        self.animationBody.transform = CGAffineTransformMakeScale(0, 0);
+                    }
+                    self.animationcomplete = true
                 }
-                self.animationcomplete = true
+                
             })
             
         } else {

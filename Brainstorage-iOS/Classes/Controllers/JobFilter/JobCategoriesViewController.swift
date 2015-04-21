@@ -25,7 +25,7 @@ class JobCategoriesViewController: BaseTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cellIdentifier : String = "JobCategoryCell"
-        var cell : JobCategoryCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as JobCategoryCell
+        var cell : JobCategoryCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! JobCategoryCell
         var jobCategory = JobFilter.sharedInstance.categories[indexPath.row]
         cell.jobCategory = jobCategory
         if (jobCategory.selected) {
@@ -55,7 +55,7 @@ class JobCategoriesViewController: BaseTableViewController {
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell : JobCategoryCell  = tableView.cellForRowAtIndexPath(indexPath) as JobCategoryCell
+        var cell : JobCategoryCell  = tableView.cellForRowAtIndexPath(indexPath) as! JobCategoryCell
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
         var jobCategory = JobFilter.sharedInstance.categories[indexPath.row]
