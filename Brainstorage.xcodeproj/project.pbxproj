@@ -637,6 +637,7 @@
 					$SDKROOT/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Brainstorage-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -647,6 +648,7 @@
 				);
 				PRODUCT_NAME = Brainstorage;
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainstorage-iOS/SupportFiles/Brainstorage-bridging-header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -664,6 +666,7 @@
 					$SDKROOT/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Brainstorage-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -675,6 +678,7 @@
 				PRODUCT_NAME = Brainstorage;
 				PROVISIONING_PROFILE = "f94f2c59-687e-4588-a604-8702341d07f4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainstorage-iOS/SupportFiles/Brainstorage-bridging-header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

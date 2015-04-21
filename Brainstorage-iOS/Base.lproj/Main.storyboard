@@ -835,7 +835,7 @@
                                             <constraint firstAttribute="height" constant="117" id="RQL-4T-8Br"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Наисать письмо">
+                                        <state key="normal" title="Написать письмо">
                                             <color key="titleColor" red="0.94117647058823528" green="0.49019607843137253" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
